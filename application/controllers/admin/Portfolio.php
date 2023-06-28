@@ -45,6 +45,7 @@ class Portfolio extends CI_Controller
 		    $path_tmp = $_FILES['photo']['tmp_name'];
 
 		    if($path!='') {
+
 		        $ext = pathinfo( $path, PATHINFO_EXTENSION );
 		        $file_name = basename( $path, '.' . $ext );
 		        $ext_check = $this->Model_common->extension_check_photo($ext);
@@ -66,7 +67,7 @@ class Portfolio extends CI_Controller
 		        }
 
 		        $final_name = 'portfolio-'.$ai_id.'.'.$ext;
-		        move_uploaded_file( $path_tmp, './public/uploads/'.$final_name );
+		        move_uploaded_file( $path_tmp, './public/uploads/portfolio_photos/'.$final_name );
 
 		        $form_data = array(
 					'name'             => $_POST['name'],
@@ -185,13 +186,16 @@ class Portfolio extends CI_Controller
 		    $path_tmp = $_FILES['photo']['tmp_name'];
 
 		    if($path!='') {
+
 		        $ext = pathinfo( $path, PATHINFO_EXTENSION );
 		        $file_name = basename( $path, '.' . $ext );
 		        $ext_check = $this->Model_common->extension_check_photo($ext);
+
 		        if($ext_check == FALSE) {
 		            $valid = 0;
 		            $error .= 'You must have to upload jpg, jpeg, gif or png file for featured photo<br>';
 		        }
+
 		    }
 
 		    
@@ -200,6 +204,7 @@ class Portfolio extends CI_Controller
 		    	$data['portfolio'] = $this->Model_portfolio->getData($id);
 
 		    	if($path == '') {
+
 		    		$form_data = array(
 						'name'             => $_POST['name'],
 						'short_content'    => $_POST['short_content'],
@@ -216,13 +221,15 @@ class Portfolio extends CI_Controller
 						'meta_keyword'     => $_POST['meta_keyword'],
 						'meta_description' => $_POST['meta_description']
 		            );
+		            
 		            $this->Model_portfolio->update($id,$form_data);
 				}
 				else {
-					unlink('./public/uploads/'.$data['portfolio']['photo']);
+
+					unlink('./public/uploads/portfolio_photos/'.$data['portfolio']['photo']);
 
 					$final_name = 'portfolio-'.$id.'.'.$ext;
-		        	move_uploaded_file( $path_tmp, './public/uploads/'.$final_name );
+		        	move_uploaded_file( $path_tmp, './public/uploads/portfolio_photos/'.$final_name );
 
 		        	$form_data = array(
 						'name'             => $_POST['name'],

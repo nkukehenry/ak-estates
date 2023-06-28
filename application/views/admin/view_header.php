@@ -196,7 +196,7 @@
 							</span>
 						</a>
 						<ul class="treeview-menu">
-							<li><a href="<?php echo base_url(); ?>admin/portfolio_category"><i class="fa fa-circle-o"></i> Product Category</a></li>
+							<li><a href="<?php echo base_url(); ?>admin/portfolio_category"><i class="fa fa-circle-o"></i>Categories</a></li>
 							<li><a href="<?php echo base_url(); ?>admin/portfolio"><i class="fa fa-circle-o"></i> Portfolio</a></li>
 						</ul>
 					</li>

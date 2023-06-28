@@ -352,7 +352,7 @@
 
                             <div class="row" style="text-align: center; padding-top: 5%; ">
                                     <div class="button-bn" style="margin: auto;">
-                                <a href="<?php echo base_url(); ?>products/" class="mainText"><?php echo ALL_PRODUCTS; ?> <i class="fa fa-chevron-circle-right"></i></a>
+                                <a href="<?php echo base_url(); ?>services/" class="mainText"><?php echo ALL_PRODUCTS; ?> <i class="fa fa-chevron-circle-right"></i></a>
                                   </div>
                             </div>
     </div>
